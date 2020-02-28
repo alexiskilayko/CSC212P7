@@ -34,7 +34,7 @@ public class JavaList<T> extends ListADT<T> {
 	}
 	
 	@Override
-	protected boolean isEmpty() {
+	public boolean isEmpty() {
 		return inner.isEmpty();
 	}
 

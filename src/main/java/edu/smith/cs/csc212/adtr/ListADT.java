@@ -22,7 +22,7 @@ public abstract class ListADT<ItemType> implements Iterable<ItemType> {
 	 * Is this list of size zero? Might be easier than counting all the elements.
 	 * @return true if this list is empty.
 	 */
-	protected abstract boolean isEmpty();
+	public abstract boolean isEmpty();
 
 	/**
 	 * The size of this list.

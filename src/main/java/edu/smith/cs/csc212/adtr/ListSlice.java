@@ -7,14 +7,14 @@ public class ListSlice<T> extends ListADT<T> {
 	
 	public ListSlice(ListADT<T> data, int begin, int end) {
 		this.fullList = data;
-		this.fullList.checkExclusiveIndex(begin);
-		this.fullList.checkExclusiveIndex(end);
+		this.fullList.checkInclusiveIndex(begin);
+		this.fullList.checkInclusiveIndex(end);
 		this.begin = begin;
 		this.end = end;
 	}
 	
 	@Override
-	protected boolean isEmpty() {
+	public boolean isEmpty() {
 		return begin == end;
 	}
 
@@ -49,38 +49,38 @@ public class ListSlice<T> extends ListADT<T> {
 
 	@Override
 	public void addIndex(int index, T value) {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException();				
 	}
 
 	@Override
 	public void addFront(T value) {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException();		
 	}
 
 	@Override
 	public void addBack(T value) {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public T removeIndex(int index) {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public T removeBack() {
-		// TODO Auto-generated method stub
-		return null;
+		checkNotEmpty();
+		T found = this.getBack();
+		this.end--;
+		return found;
 	}
 
 	@Override
 	public T removeFront() {
-		// TODO Auto-generated method stub
-		return null;
+		checkNotEmpty();
+		T found = this.getFront();
+		this.begin++;
+		return found;
 	}
 
 }
